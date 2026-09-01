@@ -9,6 +9,10 @@ that Claude Code discovers automatically.
 | Skill | What it does | Requires |
 |---|---|---|
 | [`gtd`](gtd/SKILL.md) | Runs a GTD system held in Evernote: capture, clarify, organise, surface next actions and waiting-fors, and drive the daily/weekly/quarterly reviews. | `evernote` MCP server |
+| [`cc2-construction`](cc2-construction/SKILL.md) | Baseline construction standards applied to all code work: naming, routine and class structure, control flow, scope, comments, refactoring discipline. | — |
+| [`cc2-table-driven`](cc2-table-driven/SKILL.md) | Replaces switch statements and nested conditional trees with direct-access, indexed-access, or stair-step lookup tables. | — |
+| [`cc2-defensive-design`](cc2-defensive-design/SKILL.md) | Places the barricade between untrusted and trusted data, and separates assertions from error handling. | — |
+| [`cc2-audit`](cc2-audit/SKILL.md) | Read-only construction-quality review of a file, module, or diff. Runs forked, reports ranked findings, changes nothing. | — |
 
 ## Installing on another machine
 
@@ -17,6 +21,9 @@ The repository root must land *as* `~/.claude/skills`, not inside it:
 ```sh
 git clone https://github.com/JoeNutt/Claude-Code-Skills.git ~/.claude/skills
 ```
+
+Nothing else to run. Everything this repository provides lives inside it, so a clone is a
+complete install on any machine.
 
 If that directory already exists, clone elsewhere and move the contents in, or point an
 existing checkout at this remote:
@@ -28,8 +35,8 @@ git remote add origin https://github.com/JoeNutt/Claude-Code-Skills.git
 git pull origin main
 ```
 
-Skills are picked up at the start of a session, so restart Claude Code after cloning. Run
-`/help` or ask "what skills do you have?" to confirm they loaded.
+New skill directories are picked up during a running session, so no restart is needed after
+cloning or adding one. Ask "what skills do you have?" to confirm they loaded.
 
 ## Layout
 
@@ -48,6 +55,5 @@ skill applies, so it carries the trigger phrases.
 
 ## Adding a skill
 
-Create a folder, write a `SKILL.md` with `name` and `description` frontmatter, restart, and
-commit. Behavioural instructions belong in `SKILL.md` and its references — this README
+Create a folder, write a `SKILL.md` with `name` and `description` frontmatter, and commit. Behavioural instructions belong in `SKILL.md` and its references — this README
 describes the repository, and deliberately does not restate how any skill works.
