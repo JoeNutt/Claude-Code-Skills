@@ -105,7 +105,8 @@ When stuck at one level, the problem is often that a decision belongs at a diffe
 - **Inherit only for genuine "is a" substitutability.** Anything a subclass must override to
   neuter is a signal the relationship is containment, not inheritance. Keep hierarchies to
   three levels; deeper ones defeat the comprehension they were meant to aid.
-- **Keep modules small and single-purpose**, and name them for their responsibility.
+- **Keep modules small and single-purpose**, and name them for their responsibility. "Small"
+  is measured in responsibilities and actors served, not in lines or field counts.
 - **Look for common design patterns** — they supply a shared vocabulary and a checked
   solution. Do not force one where the problem does not fit; a misapplied pattern is
   accidental complexity with a respectable name.

@@ -52,7 +52,14 @@ so read-time clarity always outranks write-time convenience.
   operations with low-level data manipulation in the same public surface.
 - Hide information, especially the parts most likely to change. Ask "what does this class
   conceal?" — if nothing, it is a data bag, not an abstraction.
-- Maximum seven data members before the class is a decomposition candidate.
+- **Size is measured in responsibilities, not fields.** Cohesion is what binds code that
+  answers to a *single actor* — one source of change requests. Ask who asks for changes to
+  this class: if `calculatePay()` answers to finance, `reportHours()` to HR and `save()` to
+  the DBAs, that is three classes wearing one name, and a change for one will break another.
+- A practical smell for the same thing: if the methods split into groups that each use a
+  different subset of the fields, the class is already two classes.
+- Generally one class or module per source file. Closely related small types — a record, an
+  exception used only here — are a reasonable exception.
 - Default to the most private visibility the language offers. Expose only what the
   abstraction genuinely requires — never make a routine public merely because it happens
   to call other public routines.

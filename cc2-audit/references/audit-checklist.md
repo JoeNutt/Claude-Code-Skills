@@ -32,7 +32,8 @@ condition becomes a named predicate, a loop interior becomes a routine.
 - Boolean parameters that select behavior — `render(true)` is unreadable at the call site
   and usually means two routines.
 - Output parameters where a return value would do.
-- Class data members: more than seven suggests decomposition.
+- Class responsibilities: do the methods answer to more than one actor or source of change
+  requests? That is the decomposition signal, not a field count.
 - Visibility: members public that no external caller uses.
 - Coupling: `a.getB().getC().doThing()` chains; a class reaching through another's internals.
 - Cohesion: does everything in this class serve one abstraction, or is it a utility bag?
