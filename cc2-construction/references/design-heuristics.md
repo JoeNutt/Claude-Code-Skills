@@ -79,6 +79,11 @@ a caller need to know about this module's insides to use it correctly? The answe
 
 ## Levels of design
 
+> Levels 1-2 (system and subsystem) are application architecture: dependency direction,
+> layering, ports and boundaries. That is the `architecture` skill's territory. This file
+> covers levels 3-5 — design within a module.
+
+
 Work at the right level; conflating them produces the "big ball of mud" where a request
 handler also formats currency.
 

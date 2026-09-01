@@ -69,6 +69,8 @@ asked for.
 ## Interfaces between modules
 
 - Agree the interface before building either side; it is the contract the integration rests on.
+  *Where* the boundary should fall, and which way its dependency points, is a design question —
+  see `architecture` before assembling.
 - Each module barricades its own inputs. Data validated inside module A is untrusted at
   module B's boundary, even when the same person wrote both.
 - Keep the dependency graph acyclic. A cycle between modules means they are one module

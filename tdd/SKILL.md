@@ -78,6 +78,8 @@ named skill only when a row actually fires** — most cycles fire nothing and co
 | A new endpoint, action, or anything needing a permission check | `sec-authz-least-privilege` |
 | Passwords, tokens, keys, secrets, randomness, encryption | `sec-crypto-secrets` |
 | Manual memory, `unsafe`, or FFI | `sec-memory-safety` |
+| Test needs heavy mocking, a DB, a clock, or the network to check a rule | `architecture` |
+| Logic in the wrong layer; domain touching a framework; dependency pointing outward | `architecture` |
 | Modules being wired together; build or CI touched | `cc2-integration` |
 
 If several fire, take the most costly first. Do not attempt every improvement in one pass —
