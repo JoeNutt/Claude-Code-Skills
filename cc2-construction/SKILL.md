@@ -29,10 +29,16 @@ so read-time clarity always outranks write-time convenience.
 ## Routines
 
 - One routine, one job. A name needing "and" or "or" (`initAndProcess`) means it must be split.
-- **Parameters: aim for zero, one, or two.** Three should be avoided where it is possible to
-  avoid it. More than three needs a real justification — and the usual answer is that
-  arguments travelling together want to be a type of their own. Seven is an absolute ceiling,
-  not a target; a routine approaching it is doing too much.
+- **Parameters: aim for zero, one, or two; three is the working limit.** Arguments are
+  couplings, and they are harder to read than they are to write — the IDE helps the author
+  and not the reader.
+- Past three, look for a way to **group them**. The test: if several values are cohesive
+  enough to be passed as a unit, why are they not already a type? Alternatively they may
+  belong as fields on the enclosing class.
+- The limit is a heuristic, not a law. Where the ordering has a natural rationale —
+  `distance(x1, y1, x2, y2)` — more than three is fine, because there is no way to get them
+  wrong. Where there is no such rationale, each extra argument multiplies the ways to call it
+  incorrectly. Seven is an absolute ceiling; a routine approaching it is doing too much.
 - Order parameters input → modify → output, consistently across the whole codebase.
 - Keep cyclomatic complexity under 10 per routine. Past that, extract.
 - Avoid boolean parameters that select behavior; `render(true)` is unreadable at the call
@@ -129,6 +135,10 @@ regulatory requirement, a workaround with its ticket reference:
 If code needs a comment to be understood, that is the signal to rename or extract — take
 that path first, and only comment when it genuinely fails.
 
+**This is not licence to leave things unexplained.** The rule targets noise, not context.
+Where a reader genuinely needs information that cannot live in code, withholding it is a
+failure too — record it, briefly, as a constraint.
+
 Docstring format, the full list of banned comment types, and the layout rules in detail are
 in `references/comments-and-layout.md`.
 
@@ -144,6 +154,13 @@ in `references/comments-and-layout.md`.
   structure. Related lines stay tight; unrelated lines get air.
 - Keep vertical distance short between things that are used together — a variable and its
   use, a function and the one it calls.
+- **Hold one level of abstraction per routine.** Mixing levels forces the reader to ride an
+  abstraction roller coaster: each drop from policy to detail makes them push their train of
+  thought onto a mental stack — and people do not have a mental stack. What gets pushed is
+  usually lost. Extract the low-level part and name it.
+
+Layout is a courtesy to the reader, who is nearly always someone other than you, and usually
+you in six months.
 
 ## Working discipline
 

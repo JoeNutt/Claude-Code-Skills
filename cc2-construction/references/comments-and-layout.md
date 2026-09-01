@@ -118,8 +118,18 @@ placeOrder()                  <- top level: reads as the story
 
 The consequence worth internalizing: **one function should mix only one level of
 abstraction.** A routine that calls `calculateTotal()` and also does string concatenation and
-index arithmetic is operating at two altitudes at once, and reading it requires the reader to
-change gear mid-sentence. Extract the low-level part and name it.
+index arithmetic is operating at two altitudes at once.
+
+The mechanism is worth stating precisely, because it explains why this matters more than it
+looks. Every time a reader drops from a high-level line to a low-level one, they have to push
+their current train of thought aside to deal with the detail, then pop back to it. **People do
+not have a mental stack.** What gets pushed aside is usually just lost, and the reader starts
+the paragraph again. A function that alternates levels makes them do this repeatedly — an
+abstraction roller coaster.
+
+Symptoms: a routine that both orchestrates named steps *and* zeroes counters, indexes arrays,
+or formats strings. Extract the low-level part, name it, and let the top level read as a
+sequence of intentions.
 
 ## Vertical and horizontal formatting
 

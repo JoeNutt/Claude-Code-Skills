@@ -26,9 +26,9 @@ condition becomes a named predicate, a loop interior becomes a routine.
 
 - Does the name describe everything the routine does? A name needing "and"/"or", or a vague
   name (`process`, `handle`, `manage`, `doWork`), signals mixed responsibilities.
-- Parameters: more than three without real justification (seven is an absolute ceiling), or
-  ordered inconsistently with the rest of the codebase. Arguments that travel together want
-  to be a type.
+- Parameters: more than three without a natural ordering rationale (seven is an absolute
+  ceiling), or ordered inconsistently with the rest of the codebase. Values cohesive enough to
+  travel together want to be a type, or fields on the class.
 - Boolean parameters that select behavior — `render(true)` is unreadable at the call site
   and usually means two routines.
 - Output parameters where a return value would do.
