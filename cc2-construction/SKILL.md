@@ -38,7 +38,7 @@ so read-time clarity always outranks write-time convenience.
 - The limit is a heuristic, not a law. Where the ordering has a natural rationale —
   `distance(x1, y1, x2, y2)` — more than three is fine, because there is no way to get them
   wrong. Where there is no such rationale, each extra argument multiplies the ways to call it
-  incorrectly. Seven is an absolute ceiling; a routine approaching it is doing too much.
+  incorrectly. A long argument list with no such rationale is the signal to stop and group.
 - Order parameters input → modify → output, consistently across the whole codebase.
 - Keep cyclomatic complexity under 10 per routine. Past that, extract.
 - Avoid boolean parameters that select behavior; `render(true)` is unreadable at the call

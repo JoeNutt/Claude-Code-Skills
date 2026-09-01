@@ -65,7 +65,8 @@ what you would change first.
 - **Verify before asserting.** Never report a defect in code you have not read, and never
   claim a call site exists without having found it. Quote the line if in doubt.
 - **Cite the rule, not the book.** Say "this routine takes nine parameters; the limit is
-  seven" — not "McConnell says". The standard is the user's, not an authority's.
+  three, with no ordering rationale" — not "McConnell says" or "Martin says". The standard is
+  the user's, not an authority's.
 - **Say when the code is fine.** A short audit reporting three real findings is more useful
   than thirty padded ones. Reporting nothing significant is a valid, welcome outcome.
 - **Respect deliberate deviation.** Idiomatic patterns of the language or framework, and
