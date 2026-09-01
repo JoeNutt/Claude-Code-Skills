@@ -8,13 +8,15 @@ The `cc2-*` skills carry software construction standards derived from *Code Comp
 (McConnell). The `sec-*` skills carry secure development practice, structured on *Writing
 Secure Code 2nd ed.* (Howard & LeBlanc) with the concrete guidance modernized against
 current practice — the book is from 2002, so its principles are kept and its platform- and
-era-specific recommendations are replaced. Both sets are language- and project-agnostic.
+era-specific recommendations are replaced. The `tdd` skill drives the red-green-refactor cycle and uses both sets as the baseline its
+refactor step checks against. All are language- and project-agnostic.
 
 ## Skills
 
 | Skill | What it does | Requires |
 |---|---|---|
 | [`gtd`](gtd/SKILL.md) | Runs a GTD system held in Evernote: capture, clarify, organise, surface next actions and waiting-fors, and drive the daily/weekly/quarterly reviews. | `evernote` MCP server |
+| [`tdd`](tdd/SKILL.md) | Red-green-refactor with a mandatory refactor gate that routes to the `cc2-*` and `sec-*` standards only when a trigger fires. | — |
 | [`cc2-construction`](cc2-construction/SKILL.md) | Baseline construction standards applied to all code work: naming, routine and class structure, control flow, scope, comments, refactoring discipline. | — |
 | [`cc2-table-driven`](cc2-table-driven/SKILL.md) | Replaces switch statements and nested conditional trees with direct-access, indexed-access, or stair-step lookup tables. | — |
 | [`cc2-defensive-design`](cc2-defensive-design/SKILL.md) | Places the barricade between untrusted and trusted data, and separates assertions from error handling. | — |
