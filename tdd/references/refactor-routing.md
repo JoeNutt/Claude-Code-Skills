@@ -36,6 +36,13 @@ to green. Look for all of it, not just copy-paste:
 The rule of three is a reasonable guide for *extracting* an abstraction, but exact
 duplication created in the green step goes now, not on its third appearance.
 
+**One qualification, and it matters.** "Remove all duplication" holds *within* a boundary —
+a function, a module, a service. It does not automatically hold *across* independently
+developed modules or services: forcing one canonical representation across a boundary couples
+the two sides together, and that coupling usually costs more than the duplication did.
+Deduplicate within a boundary; translate across one. If the duplicate lives on the other side
+of a module or service boundary, that is an `architecture` question, not a refactor.
+
 ### Structure
 - A routine that needs a comment to explain its middle — extract that part and name it.
 - A name containing "and", "or", "manager", "helper", "util", "process", "handle".

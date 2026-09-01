@@ -65,7 +65,7 @@ named skill only when a row actually fires** — most cycles fire nothing and co
 
 | If you see | Load |
 |---|---|
-| **Duplication of any kind** — the primary target of this step | `cc2-construction` |
+| **Duplication within a module** — the primary target of this step | `cc2-construction` |
 | Routine doing more than one thing; name needs "and"; >7 params | `cc2-construction` |
 | Nesting >3 deep; cyclomatic complexity >10; long routine | `cc2-construction` |
 | `if/else` chain or `switch` over one value, 3+ cases | `cc2-table-driven` |

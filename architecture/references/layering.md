@@ -90,6 +90,11 @@ and enforced by nothing will be violated, silently, and usually within weeks.
 - The port lives with the code that *uses* it. This is the part most often got wrong — an
   interface sitting in the same package as its single implementation has inverted nothing.
 - One port per concern. A single `Database` interface with forty methods is not a boundary.
+- **A port exposes only the subset you actually use**, not a mirror of the API behind it.
+  Your code almost never needs every detail of a third-party service, so the port is nearly
+  always a *simpler* thing than the API it fronts — expressed in your vocabulary, not the
+  vendor's. A port that mirrors an SDK one-for-one has renamed the coupling, not removed it.
+  Done properly, the code on the inside doesn't know the vendor exists.
 - Ports for anything non-deterministic: clock, randomness, ids, filesystem, network. This is
   what makes the domain testable without infrastructure.
 

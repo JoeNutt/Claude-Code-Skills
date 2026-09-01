@@ -1,5 +1,15 @@
 # Coupling, Cohesion, and Module Boundaries
 
+## Coupling is the root concept
+
+Coupling is what most directly limits how reliably and sustainably software can be changed
+and delivered. It is worth being precise about the relationship: **modularity, cohesion,
+abstraction and separation of concerns are not four peers sitting alongside coupling — they
+are the techniques by which coupling is managed.** That is the reason they matter.
+
+So when weighing any of them, the question to ask is not "is this modular?" but "does this
+reduce, or better place, the coupling — and at what cost?"
+
 ## Coupling cannot be removed, only placed
 
 Components must communicate, so coupling is inherent. The engineering decision is **where it
@@ -31,6 +41,21 @@ Aim to convert coupling downward through that table. Semantic coupling in partic
 be made explicit — if B genuinely requires A to have run, express it in the type or the
 signature rather than in a comment.
 
+### A second lens: coupling by consequence
+
+The taxonomy above classifies coupling by its *form*. A complementary model (Nygard's)
+classifies it by *what it stops you doing*, which is often the more actionable question at
+system scale:
+
+- **Developmental** — you can't release your change until I've finished mine.
+- **Operational** — my service can't start unless yours is already running.
+
+Both are design choices, not facts of life, and both are invisible in a form-based analysis:
+two services can be beautifully decoupled at the code level and still be developmentally
+coupled by a shared release train. Ask of any boundary: *can these be built, tested,
+released, and run independently?* Where the answer is no, name which kind of coupling is
+stopping it.
+
 ### Afferent and efferent
 
 - **Efferent** — what this module depends on. High means fragile: many things can break it.
@@ -42,6 +67,31 @@ coupling graph running underneath your intended architecture. Split them by conc
 
 **Stable things should be abstract; volatile things should be concrete.** A module that
 everything depends on had better be either stable or an interface.
+
+## Decoupling has costs
+
+Loose coupling is a preference, not an absolute, and treating it as an absolute is itself a
+design error.
+
+**Decoupling usually means more code.** Introducing an interface, an adapter, a translation
+layer or a data structure at a boundary adds code that does no business work. That is a real
+cost, paid for real benefit. The common mistake is the reflex that "less code is good, more
+code is bad" — at a boundary, the extra code is frequently the right trade.
+
+**Coupling can be too loose.** Abstraction and indirection pushed past the point of value
+produce systems that are hard to follow, hard to change as a whole, and sometimes materially
+slower — indirection is not free at runtime. "We followed best practice" is not a defence for
+a design nobody can trace.
+
+**DRY is too simplistic as stated.** A single canonical representation of each behavior is
+good advice *within* a function, a module, or a service — and reasonably up to the scope of
+one repository or deployment pipeline. Applied *across* independently developed services or
+modules it inverts: enforcing one shared representation couples them together, and that cost
+usually exceeds the cost of the duplication. Two services each with their own notion of
+"customer", translated at the boundary, are often better designed than two services sharing
+one model.
+
+The rule of thumb: **deduplicate within a boundary; translate across one.**
 
 ## Cohesion
 
@@ -81,7 +131,13 @@ services does not decouple it; it converts a compile-time error into a runtime f
 adds latency, partial failure, versioning, and distributed debugging.
 
 Get the module boundary right *in the monolith* first. A clean internal boundary can be
-extracted later; a bad one becomes a distributed bad one.
+extracted later; a bad one becomes a distributed bad one. Microservices are not the only
+route to modularity, and treating them as the definition of it skips the actual work — which
+is taking the boundaries and the protocols across them seriously.
+
+Note the specific cost that independent deployability buys: services that deploy
+independently **are not tested together**. That is the trade — release autonomy in exchange
+for losing the guarantee that the combination works. Worth making deliberately.
 
 Split into a separate process only for a reason that is genuinely about deployment or
 runtime:

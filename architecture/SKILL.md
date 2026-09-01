@@ -53,6 +53,12 @@ knowing that the vocabulary differs while the rule does not.
 - **Driving** adapters (left) call in: HTTP, CLI, tests, message consumers.
 - **Driven** adapters (right) are called by the domain: databases, external services, clocks.
 
+**When to adopt it:** at the boundaries *between* services or modules, as a translation
+layer — not uniformly at every seam inside one module. The strongest version aligns those
+boundaries with bounded contexts: distinct areas of the domain where the vocabulary genuinely
+differs, translating whenever information crosses between them. Applied that way it minimizes
+coupling and raises cohesion at the same time. Applied everywhere, it is ceremony.
+
 In practice, prefer this vocabulary. "Where does this go?" is much easier to answer as "is
 this a port, an adapter, or domain?" than by counting rings — and it makes the crucial point
 explicit: **the interface belongs to the inner side, not the implementer.**
