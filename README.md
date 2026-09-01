@@ -12,7 +12,11 @@ that Claude Code discovers automatically.
 | [`cc2-construction`](cc2-construction/SKILL.md) | Baseline construction standards applied to all code work: naming, routine and class structure, control flow, scope, comments, refactoring discipline. | — |
 | [`cc2-table-driven`](cc2-table-driven/SKILL.md) | Replaces switch statements and nested conditional trees with direct-access, indexed-access, or stair-step lookup tables. | — |
 | [`cc2-defensive-design`](cc2-defensive-design/SKILL.md) | Places the barricade between untrusted and trusted data, and separates assertions from error handling. | — |
+| [`cc2-pseudocode-design`](cc2-pseudocode-design/SKILL.md) | Designs non-trivial logic as a reviewable outline — purpose, inputs, outputs, pre/postconditions — before any code is written. | — |
+| [`cc2-debugging`](cc2-debugging/SKILL.md) | Scientific-method debugging: stabilize, reproduce minimally, hypothesize and test, fix the cause, verify, find similar defects. | — |
+| [`cc2-integration`](cc2-integration/SKILL.md) | Assembling modules into a system: integration strategy, stubs and drivers, smoke tests, scaling formality to project size. | — |
 | [`cc2-audit`](cc2-audit/SKILL.md) | Read-only construction-quality review of a file, module, or diff. Runs forked, reports ranked findings, changes nothing. | — |
+| [`cc2-stakeholder-communication`](cc2-stakeholder-communication/SKILL.md) | Translates technical work into plain language and business consequence for release notes, status updates, and exec summaries. | — |
 
 ## Installing on another machine
 

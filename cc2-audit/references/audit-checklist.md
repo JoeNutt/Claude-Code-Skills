@@ -14,6 +14,8 @@ wrong — that distinction is most of the value of an audit.
 | Routine length | Doesn't fit on a screen | Needing to scroll to see one routine's logic |
 | Decision points | > 10 branches in one routine | Long `&&`/`\|\|` chains, many `if`s |
 | Conditional tree over one value | > 3 cases | Candidate for a lookup table |
+| Cyclomatic complexity | > 10 per routine | Many independent paths through one routine |
+| Inheritance depth | > 3 levels | Behavior scattered up a tall hierarchy |
 | Boolean expression terms | > 2-3 terms | Unnamed compound condition |
 
 Ask: what is the deepest, hairiest routine here, and would a new maintainer understand it in
@@ -32,7 +34,16 @@ condition becomes a named predicate, a loop interior becomes a routine.
 - Visibility: members public that no external caller uses.
 - Coupling: `a.getB().getC().doThing()` chains; a class reaching through another's internals.
 - Cohesion: does everything in this class serve one abstraction, or is it a utility bag?
-- Does the class hide a source of change, or leak it to every caller?
+- Does the class hide a source of change, or leak it to every caller? If it hides nothing,
+  it is a data bag, not an abstraction.
+- Consistent abstraction level: does one public interface mix business operations with
+  low-level data manipulation?
+- Inheritance used where containment would do — no genuine "is a" substitutability, or a
+  subclass overriding inherited behavior to neuter it.
+- Routines public only because they call other public routines.
+- Semantic coupling: does anything depend on another module's internal behavior rather than
+  its interface — call ordering, a side effect, an undocumented guarantee?
+- Recursion spanning more than one routine (cyclic recursion chains).
 
 ## 3. Naming
 
@@ -88,6 +99,25 @@ condition becomes a named predicate, a loop interior becomes a routine.
   parameters.
 - Non-determinism: direct use of clock, randomness, filesystem, or network with no seam.
 - Tests asserting on incidental detail (log text, formatting) rather than behavior.
+
+## 8. What this audit cannot see
+
+No single detection technique finds most defects — reading, testing, and review each catch a
+different and only partly overlapping set. A clean audit is therefore evidence, not proof.
+
+Say so when it matters. Specifically, flag where review alone is insufficient and something
+else is needed:
+
+- Logic that is correct on inspection but has no test proving it stays that way.
+- Concurrency and ordering, which reading reliably fails to catch.
+- Performance claims, which need measurement rather than an opinion about a hot path.
+- Integration behavior between modules that were each audited alone.
+- Anything depending on production data shape or scale.
+
+Where a defect class needs a different technique, name the technique — "this needs a test at
+the bracket boundaries", "this needs a race detector" — rather than reporting a vague
+concern. Prefer specific, checkable findings over impressions: a finding an author can
+verify or refute in a minute is worth more than a general unease about a file.
 
 ---
 

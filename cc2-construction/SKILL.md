@@ -31,11 +31,32 @@ so read-time clarity always outranks write-time convenience.
 - One routine, one job. A name needing "and" or "or" (`initAndProcess`) means it must be split.
 - Maximum seven parameters. Beyond that, pass a structured options/config object.
 - Order parameters input → modify → output, consistently across the whole codebase.
-- Maximum seven data members on a class before it is a decomposition candidate.
+- Keep cyclomatic complexity under 10 per routine. Past that, extract.
+- Avoid boolean parameters that select behavior; `render(true)` is unreadable at the call
+  site and usually wants to be two routines.
+
+## Classes and abstractions
+
+- Design around abstractions, not raw data. A class models a thing in the problem domain;
+  its interface should read as operations on that thing.
+- Hold one consistent level of abstraction per interface. Do not mix high-level business
+  operations with low-level data manipulation in the same public surface.
+- Hide information, especially the parts most likely to change. Ask "what does this class
+  conceal?" — if nothing, it is a data bag, not an abstraction.
+- Maximum seven data members before the class is a decomposition candidate.
 - Default to the most private visibility the language offers. Expose only what the
-  abstraction genuinely requires.
-- Respect the Law of Demeter: talk to immediate collaborators, not to objects returned by
-  other objects (`a.getB().getC().doThing()` is a coupling smell).
+  abstraction genuinely requires — never make a routine public merely because it happens
+  to call other public routines.
+- Prefer containment ("has a") over inheritance. Use inheritance only for genuine "is a"
+  substitutability, and keep hierarchies at most three levels deep.
+- Keep coupling loose: talk to immediate collaborators, not to objects returned by other
+  objects (`a.getB().getC().doThing()` is a coupling smell), and never write code that
+  depends on another component's internals beyond its public contract.
+
+Deeper design guidance — information hiding, isolating likely changes, the coupling
+criteria, and how to proceed when the design is not obvious — is in
+`references/design-heuristics.md`. Read it when designing a new module, splitting a class,
+or when the right structure is genuinely unclear rather than merely unwritten.
 
 ## Data and scope
 
@@ -50,14 +71,21 @@ so read-time clarity always outranks write-time convenience.
 
 - Write the nominal path first, then the unusual and error cases. The main purpose of a
   block should be visible without scrolling.
-- Prefer guard clauses and early returns over nested conditionals.
+- Structure logic as sequence, selection, and iteration. Make execution dependencies
+  explicit — pass one step's output as the next step's argument rather than relying on
+  ordering the reader has to infer.
+- Use early returns for guard clauses at the top of a routine, then keep a single exit for
+  the main path. Multiple returns are justified only where they genuinely beat nesting;
+  scattered returns through a long routine are not.
 - Nesting deeper than three levels is a defect. Extract the interior into a named routine.
 - Simplify negated compound conditions with DeMorgan's laws:
   `if (!a || !b)` becomes `if (!(a && b))`.
 - Use a counted loop only when the iteration count is known up front; otherwise use a
   conditional loop. Avoid loops that break arbitrarily from the middle.
 - A sprawling `if/else` chain or `switch` over data is usually a lookup table in disguise.
-- No `goto`. Restrict recursion to genuinely hierarchical data.
+- No `goto`. Restrict recursion to genuinely hierarchical data, keep it within a single
+  routine, and never build cyclic recursion chains across routines — they are close to
+  impossible to trace.
 
 ## Comments and layout
 
