@@ -8,7 +8,9 @@ The `cc2-*` skills carry software construction standards derived from *Code Comp
 (McConnell). The `sec-*` skills carry secure development practice, structured on *Writing
 Secure Code 2nd ed.* (Howard & LeBlanc) with the concrete guidance modernized against
 current practice — the book is from 2002, so its principles are kept and its platform- and
-era-specific recommendations are replaced. The `architecture` skill covers structure above the module level, drawing on Clean
+era-specific recommendations are replaced. Comment discipline, function-argument limits and code layout follow *Clean Code* (Martin),
+folded into `cc2-construction` rather than given their own skill. The `architecture` skill
+covers structure above the module level, drawing on Clean
 Architecture (Martin), ports and adapters (Cockburn) and Modern Software Engineering
 (Farley). The `tdd` skill drives the red-green-refactor cycle and uses all of these as the
 baseline its refactor step checks against. All are language- and project-agnostic.

@@ -66,13 +66,13 @@ named skill only when a row actually fires** — most cycles fire nothing and co
 | If you see | Load |
 |---|---|
 | **Duplication within a module** — the primary target of this step | `cc2-construction` |
-| Routine doing more than one thing; name needs "and"; >7 params | `cc2-construction` |
+| Routine doing more than one thing; name needs "and"; more than 3 params | `cc2-construction` |
 | Nesting >3 deep; cyclomatic complexity >10; long routine | `cc2-construction` |
 | `if/else` chain or `switch` over one value, 3+ cases | `cc2-table-driven` |
 | Vague names, magic numbers/strings, negated booleans | `cc2-construction` |
 | Class >7 members; deep inheritance; leaked internals; a data bag | `cc2-construction` → `references/design-heuristics.md` |
 | Validation scattered through the interior; unclear trust boundary | `cc2-defensive-design` |
-| Comments restating the code; missing *why* on a non-obvious decision | `cc2-construction` |
+| Any comment that isn't a docstring or an external constraint; docstring carrying rationale | `cc2-construction` |
 | Untrusted input, file paths, uploads, external payloads | `sec-input-validation` |
 | Data reaching a query, command, template, markup, URL, or fetch | `sec-injection-defense` |
 | A new endpoint, action, or anything needing a permission check | `sec-authz-least-privilege` |

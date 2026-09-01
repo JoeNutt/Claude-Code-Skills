@@ -26,7 +26,9 @@ condition becomes a named predicate, a loop interior becomes a routine.
 
 - Does the name describe everything the routine does? A name needing "and"/"or", or a vague
   name (`process`, `handle`, `manage`, `doWork`), signals mixed responsibilities.
-- Parameters: more than seven, or ordered inconsistently with the rest of the codebase.
+- Parameters: more than three without real justification (seven is an absolute ceiling), or
+  ordered inconsistently with the rest of the codebase. Arguments that travel together want
+  to be a type.
 - Boolean parameters that select behavior — `render(true)` is unreadable at the call site
   and usually means two routines.
 - Output parameters where a return value would do.
@@ -82,12 +84,17 @@ condition becomes a named predicate, a loop interior becomes a routine.
 
 ## 6. Comments and layout
 
-- Comments restating syntax (`i++  // increment i`).
-- Absent *why* where a decision is non-obvious: a workaround, a magic constant's origin, an
-  ordering dependency, a deliberate inefficiency.
+- Any comment that is not a docstring or a recorded external constraint. Narration of the
+  code, self-justification of a design choice, banners, change logs, author tags.
+- Docstrings carrying rationale, implementation notes, or history rather than what / params /
+  returns / raises.
+- An external constraint that is *not* recorded where a reader could not possibly infer it —
+  a vendor quirk, a spec requirement, an ordering dependency imposed from outside.
 - Stale comments contradicting the code — worse than none, because they are trusted.
 - Commented-out code.
 - Missing blank-line separation between logical paragraphs.
+- File does not descend from abstract to detailed; helpers above the code that calls them.
+- A routine mixing two levels of abstraction.
 - Formatting inconsistent with the rest of the file or the project's formatter.
 
 ## 7. Testability
@@ -129,7 +136,8 @@ Order by cost of leaving it, not effort to fix:
    unvalidated untrusted input, money in floats.
 2. **Maintenance hazard** — deep nesting, mixed responsibilities, tight coupling, global
    mutable state, lying or stale names and comments.
-3. **Readability friction** — vague names, magic numbers, missing *why* comments, layout.
+3. **Readability friction** — vague names, magic numbers, comment noise, layout that does not
+   descend from abstract to detailed.
 
 Findings without a nameable consequence are preferences. Drop them.
 

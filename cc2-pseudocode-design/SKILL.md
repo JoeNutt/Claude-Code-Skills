@@ -82,7 +82,7 @@ unless the user has said to. The entire value is the checkpoint.
 
 Check it yourself first: does it handle the failure modes listed in step 1, hold one
 abstraction level, satisfy the postconditions on every path including error paths, and stay
-within the construction limits (one job, under seven parameters, complexity under 10)?
+within the construction limits (one job, three parameters or fewer, complexity under 10)?
 
 Iterate on the outline while it is still cheap.
 
@@ -91,9 +91,10 @@ Iterate on the outline while it is still cheap.
 Once the outline is agreed:
 
 - Fill in the code beneath each step.
-- Outline lines that explain a *why* become comments; lines that merely restate the code
-  that replaced them get deleted. A comment reading `# add tax to the total` above
-  `total += tax` is exactly the noise the standards forbid.
+- **The outline is scaffolding, not comments.** Delete it as the code replaces it. An outline
+  line that restated what the code now shows is exactly the noise the comment rule forbids.
+  The header block becomes the docstring — what it does, params, returns, raises — and
+  nothing else survives unless it records a genuine external constraint.
 - If implementing reveals the outline was wrong, fix the outline first, then the code. Do
   not let the implementation silently diverge from the reviewed design.
 

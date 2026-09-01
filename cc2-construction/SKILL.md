@@ -29,7 +29,10 @@ so read-time clarity always outranks write-time convenience.
 ## Routines
 
 - One routine, one job. A name needing "and" or "or" (`initAndProcess`) means it must be split.
-- Maximum seven parameters. Beyond that, pass a structured options/config object.
+- **Parameters: aim for zero, one, or two.** Three should be avoided where it is possible to
+  avoid it. More than three needs a real justification — and the usual answer is that
+  arguments travelling together want to be a type of their own. Seven is an absolute ceiling,
+  not a target; a routine approaching it is doing too much.
 - Order parameters input → modify → output, consistently across the whole codebase.
 - Keep cyclomatic complexity under 10 per routine. Past that, extract.
 - Avoid boolean parameters that select behavior; `render(true)` is unreadable at the call
@@ -87,13 +90,60 @@ or when the right structure is genuinely unclear rather than merely unwritten.
   routine, and never build cyclic recursion chains across routines — they are close to
   impossible to trace.
 
-## Comments and layout
+## Comments
 
-- Code explains *how*; comments explain *why* — the business rule, the trade-off, the
-  workaround and its cause. Never write a comment that restates the syntax.
-- Delete commented-out code; version control already holds it.
-- Separate logical "paragraphs" of code with blank lines so visual structure mirrors
-  logical structure.
+**Default to no comments.** A comment is a failure to express something in the code itself —
+sometimes a necessary one, never a thing to be pleased about. The fix for unclear code is a
+better name or a smaller function, not a sentence explaining it.
+
+Exactly two kinds of comment are permitted.
+
+**1. Docstrings**, on functions, methods, classes and modules where the language and the
+project convention expect them. Format:
+
+- One or two sentences saying **what it does**. Not why it exists, not how it works, not why
+  it was written this way.
+- Parameters, if any.
+- What it returns, if anything.
+- Errors or exceptions it raises, if any.
+
+Nothing else. No rationale, no notes on the approach, no design commentary.
+
+**2. A recorded external constraint** — something a reader genuinely cannot infer from the
+code, because the reason lives outside it. A vendor's undocumented behavior, a spec quirk, a
+regulatory requirement, a workaround with its ticket reference:
+
+```
+# Vendor returns HTTP 200 on failure; body must be checked. SUPPORT-4471.
+```
+
+**Never write these:**
+
+- Narration of what the next line does — `# loop through the items`.
+- Justification of your own choices — `# using a dict here for O(1) lookup`,
+  `# this handles the edge case where…`, `# we do this first so that…`.
+- Section banners, decorative separators, change logs, author names, dates.
+- Commented-out code. Version control already has it.
+- A docstring that restates the function's name in a sentence.
+
+If code needs a comment to be understood, that is the signal to rename or extract — take
+that path first, and only comment when it genuinely fails.
+
+Docstring format, the full list of banned comment types, and the layout rules in detail are
+in `references/comments-and-layout.md`.
+
+## Layout
+
+- **Read the file top-down like a newspaper**: the most important, most abstract material at
+  the top; detail descending beneath it. A reader should get the gist from the first screen
+  and only descend for specifics.
+- **Follow the stepdown rule**: each function is followed by those one level of abstraction
+  below it, so the file reads as a continuous descent rather than requiring jumps.
+- Keep a called function below its caller where the language allows.
+- Separate logical "paragraphs" of code with blank lines so visual structure mirrors logical
+  structure. Related lines stay tight; unrelated lines get air.
+- Keep vertical distance short between things that are used together — a variable and its
+  use, a function and the one it calls.
 
 ## Working discipline
 
