@@ -6,8 +6,8 @@ Three cadences, three different jobs. Run the checklist; the user makes every ca
 
 ## Daily — each morning
 
-**Job: empty today's tickler folder, then take the Inbox to zero.** Nothing else. Do not
-drift into reorganising projects.
+**Job: empty today's tickler folder, take the Inbox to zero, then clear finished work out of
+Actions.** Nothing else. Do not drift into reorganising projects.
 
 ### 1. Tickler sweep — before anything else
 
@@ -41,7 +41,21 @@ Ticklers **not** yet due stay invisible. Do not list them, do not mention them, 
 5. Close by stating the count cleared, the count deferred to `#review`, and the number of
    ticklers that matured.
 
-If both the tickler queue and the Inbox are empty, say so and stop. Do not invent work.
+### 3. Clear completed — every day, not just Sunday
+
+The user's Evernote home dashboard reads from **Actions**, so a finished item left there clogs
+the one screen he looks at daily. This is the weekly checklist's step 2 pulled forward; it runs
+every day regardless.
+
+1. List `notebook:"Actions" tag:"#done"`.
+2. Propose the moves to **Archive** as an itemised list, and apply on approval.
+3. Before moving one, check it carries no open task — `search_tasks` ignores notebooks, so an
+   archived note's open task stays open and surfaces forever with nothing reviewing it.
+4. Report the count. It is still the week's evidence of delivery, so Sunday's update draft is
+   built from these moves rather than from a backlog the weekly pass finds.
+
+If the tickler queue and the Inbox are both empty, say so — then still run step 3, which has
+its own queue. Do not invent work.
 
 ---
 
@@ -74,8 +88,9 @@ When they say they are done, note how many items landed and continue.
 
 1. **Inbox to zero** — run the daily pass, tickler sweep included, over everything sitting
    there including the mindsweep captures.
-2. **Clear completed** — `tag:"#done"` still in Actions → move to **Archive**. Report the
-   count; this is the week's evidence of delivery and feeds step 9.
+2. **Clear completed** — `tag:"#done"` still in Actions → move to **Archive**. The daily pass
+   does this too, so expect Actions to be clear already; report what the week archived in
+   total, since that is the evidence of delivery feeding step 9.
 3. **The week ahead** — `search_tasks` for `dueDate` between today and +7 days. Surface
    what is landing: calendar commitments, day-specific actions, follow-ups, and ticklers
    about to mature. This is the one time it is legitimate to look at sleeping ticklers.
