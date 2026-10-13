@@ -13,13 +13,19 @@ folded into `cc2-construction` rather than given their own skill. The `architect
 covers structure above the module level, drawing on Clean
 Architecture (Martin), ports and adapters (Cockburn) and Modern Software Engineering
 (Farley). The `tdd` skill drives the red-green-refactor cycle and uses all of these as the
-baseline its refactor step checks against. All are language- and project-agnostic.
+baseline its refactor step checks against. The `sad-*` skills sit earlier than any of them,
+governing the requirements a system is specified in before it is built — `sad` for the
+document, with user stories and MoSCoW prioritisation split out because both are used far more
+often on their own than as part of a full document. All are language- and project-agnostic.
 
 ## Skills
 
 | Skill | What it does | Requires |
 |---|---|---|
 | [`gtd`](gtd/SKILL.md) | Runs a GTD system held in Evernote: capture, clarify, organise, surface next actions and waiting-fors, and drive the daily/weekly/quarterly reviews. | `evernote` MCP server |
+| [`sad`](sad/SKILL.md) | Produces the document that defines what is being built and why: scope, functional and non-functional requirements, assumptions and risks, interface contracts, success criteria. | — |
+| [`sad-user-stories`](sad-user-stories/SKILL.md) | Story format, mandatory Given/When/Then acceptance criteria including the denial case, splitting patterns, anti-patterns. | — |
+| [`sad-moscow`](sad-moscow/SKILL.md) | MoSCoW classification of requirements, the effort ceiling on Must Have, and the Won't Have list that bounds scope. | — |
 | [`architecture`](architecture/SKILL.md) | Dependency direction, ports and adapters, layer boundaries, coupling and cohesion, and when a boundary should become a service. | — |
 | [`tdd`](tdd/SKILL.md) | Red-green-refactor with a mandatory refactor gate that routes to the `cc2-*` and `sec-*` standards only when a trigger fires. | — |
 | [`cc2-construction`](cc2-construction/SKILL.md) | Baseline construction standards applied to all code work: naming, routine and class structure, control flow, scope, comments, refactoring discipline. | — |
