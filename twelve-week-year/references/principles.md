@@ -13,6 +13,9 @@ stick. See `sources.md` for provenance.
   determines the quality of our life."*
 - **We control only two things: our thinking and our actions.** Stop looking outside
   yourself for the cause.
+- **The ultimate aim is one question, asked continually: *"What more can I do to get the
+  result?"*** (Field Guide, Overview). Put it to the user when results slip — never "whose
+  fault is this".
 - **Hold people capable, not accountable.** Scrub the notion of "holding others
   accountable". In the WAM, participants are accountable to themselves.
 

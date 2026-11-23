@@ -21,7 +21,7 @@ where it adds to or contradicts anything here, the Field Guide wins — update t
 | — Facilitator's Guide: Greatness in the Moment | Results confirm greatness |
 | — Leading the 12 Week Year Revolution | WAM detail, two-bad-weeks rule, no plans outside the system |
 | — Handout: Commitment | Definition of commitment |
-| *The 12 Week Year Field Guide* — full text, the user's digital edition (read 2026-11-23) | Every worksheet; 80% target; four tactic criteria; four execution scenarios; Weekly Execution Routine order; Confront the Truth; 13th-week review; commitment worksheet; four constructive beliefs |
+| *The 12 Week Year Field Guide* — full text, the user's digital edition (read 2026-11-23) | Every worksheet; 80% target; four tactic criteria; four execution scenarios; Weekly Execution Routine order; Confront the Truth; 13th-week review; commitment worksheet; four constructive beliefs; "a single week is the equivalent of a month" (Ch 5); accountability's aim, "What more can I do to get the result?" (Overview) |
 
 **Where the sources disagree.** The Academy training kit (v8.15) gives the execution target as 85%.
 The Field Guide (Ch 5, Ch 7) and the 2020 Leader Guide give 80%. The skill uses 80%, the
@@ -33,8 +33,6 @@ Field Guide's figure, per the rule above.
   by source.
 - **The 13th week** — practitioner blogs and summaries. The authoritative text is the main
   book's Ch. 21.
-- **"Each week is a month"** framing — summaries (monday.com, Mind Tools); the primary
-  sources confirm only that annualized thinking limits results.
 
 ## Claims stated by the authors without a cited study
 
