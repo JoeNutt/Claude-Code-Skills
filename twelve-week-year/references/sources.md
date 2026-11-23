@@ -21,6 +21,11 @@ where it adds to or contradicts anything here, the Field Guide wins — update t
 | — Facilitator's Guide: Greatness in the Moment | Results confirm greatness |
 | — Leading the 12 Week Year Revolution | WAM detail, two-bad-weeks rule, no plans outside the system |
 | — Handout: Commitment | Definition of commitment |
+| *The 12 Week Year Field Guide* — full text, the user's digital edition (read 2026-11-23) | Every worksheet; 80% target; four tactic criteria; four execution scenarios; Weekly Execution Routine order; Confront the Truth; 13th-week review; commitment worksheet; four constructive beliefs |
+
+**Where the sources disagree.** The Academy training kit (v8.15) gives the execution target as 85%.
+The Field Guide (Ch 5, Ch 7) and the 2020 Leader Guide give 80%. The skill uses 80%, the
+Field Guide's figure, per the rule above.
 
 ## Secondary — not verified against the authors' text
 
@@ -33,4 +38,6 @@ where it adds to or contradicts anything here, the Field Guide wins — update t
 
 ## Claims stated by the authors without a cited study
 
-- *"7 times more likely to be successful"* with peer support (77% vs 10%).
+- *"7 times more likely to be successful"* with peer support (77% vs 10%). The Field Guide
+  repeats it as "research on change shows… about seven times more likely" (Ch 4), again
+  without a citation.

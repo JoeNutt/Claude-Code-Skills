@@ -46,12 +46,18 @@ tactics — so diagnose from the top of the chain down.
 - **Less is more.** One to three 12-week goals, never more. A plan with everything in it
   is a plan with nothing prioritised. Push back on a fourth goal.
 - **Goals are outcomes; tactics are actions.** A goal says where you will be at the end of
-  week 12. A tactic is *a sentence, typically starting with a verb, describing an action
-  you can take*, with a due week. Reject "communicate", "work on", "focus on", "improve" —
-  name the call, the email, the draft.
+  week 12. A tactic meets four criteria: it meets the goal criteria; it starts with an
+  action verb and is a complete sentence; it can be done as written in the week it is due
+  without significant prework; it states its frequency and due weeks. Reject
+  "communicate", "work on", "focus on", "improve" — name the call, the email, the draft.
 - **Score execution, not results.** The execution score is the percentage of this week's
-  planned tactics completed. **85% on average is the bar** — not 100%. Results lag;
-  execution is what the user controls this week.
+  planned tactics completed. **80% on average is the bar** — not 100% (Field Guide; older
+  material says 85%, see `sources.md`). Results lag; execution is what the user controls
+  this week.
+- **Read the score against the results — four scenarios.** ≥80% and on track: keep going,
+  don't coast. Under 80% and off track: **do not change the plan** — find the tactic being
+  avoided. ≥80% and off track: the plan isn't working — change the plan. Under 80% and on
+  track: luck, an over-built plan, or a different plan being worked — adjust the plan.
 - **The weekly plan is not a to-do list.** It is the one-twelfth slice of the 12-week plan
   — only the tactics due this week. Everything else the user does lives elsewhere.
 - **Never soften a score.** A low score reported honestly is the system working. The
@@ -79,9 +85,10 @@ mind-map options, cut to the critical few, write each as tactics with due weeks.
 critiquing, quote the weak tactic and give a rewritten version.
 
 ### `week`
-The weekly routine, §3–4: score last week (tactics done ÷ tactics due), review lead and
-lag indicators, then pull this week's due tactics — plus still-relevant overdue ones —
-into the weekly plan. State the score plainly and say what to be intentional about this
+The Weekly Execution Routine, §3–4, in the book's order: **score last week** (tactics
+done ÷ tactics due, plus lead and lag against target), **write this week's plan** (tactics
+due this week, still-relevant overdue ones, and weekly commitments), then **the WAM**.
+State the score plainly, name the scenario, and say what to be intentional about this
 week. If the user has struggled for two weeks or more, ask what they will do differently
 this week — that question is mandatory.
 

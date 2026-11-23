@@ -33,6 +33,14 @@ reader highlights and summaries:
 3. **Count the costs** — know in advance what keeping it will take.
 4. **Act on commitments, not feelings** — do it whether or not you feel like it.
 
+**The Field Guide's commitment worksheet** (Ch 3) — for personal breakthroughs outside the
+plan's goals: write a positively stated goal; pick the one commitment action with the
+greatest impact, ideally daily or weekly; list its costs; commit only to those whose price
+you are willing to pay. Areas: spiritual, family/spouse, physical/health, business/career,
+financial, personal, community/service. Commitments are 12 weeks long — far easier to keep
+than annual or lifetime ones. Pitfalls: missing once and giving up; failing to confront a
+missed commitment; not valuing your word.
+
 ## Greatness in the Moment
 
 - *"Life is lived in the moment: greatness happens in the moment."*
