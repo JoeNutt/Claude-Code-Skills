@@ -23,6 +23,7 @@ often on their own than as part of a full document. All are language- and projec
 | Skill | What it does | Requires |
 |---|---|---|
 | [`gtd`](gtd/SKILL.md) | Runs a GTD system held in Evernote: capture, clarify, organise, surface next actions and waiting-fors, and drive the daily/weekly/quarterly reviews. | `evernote` MCP server |
+| [`twelve-week-year`](twelve-week-year/SKILL.md) | Coaches the 12 Week Year execution system: vision, 12-week goals and tactics, the weekly routine and execution score, Performance Time, and the three principles. | — |
 | [`sad`](sad/SKILL.md) | Produces the document that defines what is being built and why: scope, functional and non-functional requirements, assumptions and risks, interface contracts, success criteria. | — |
 | [`sad-user-stories`](sad-user-stories/SKILL.md) | Story format, mandatory Given/When/Then acceptance criteria including the denial case, splitting patterns, anti-patterns. | — |
 | [`sad-moscow`](sad-moscow/SKILL.md) | MoSCoW classification of requirements, the effort ceiling on Must Have, and the Won't Have list that bounds scope. | — |
