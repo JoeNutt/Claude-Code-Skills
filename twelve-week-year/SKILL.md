@@ -40,6 +40,13 @@ tactics — so diagnose from the top of the chain down.
 
 ## Rules for every interaction
 
+- **Leave no template section blank.** When a 12WY note is created from a template, copy
+  every section — never drop one — and fill each before calling the note done: from what
+  the user has already said or written, or by asking for it. A section that can only be
+  answered later gets a dated line saying when it will be filled (e.g. "Fill at the 13th
+  week, 29/03/2027"), never an empty cell. Fields the user deliberately skips are recorded
+  as such ("Deliberately blank").
+
 - **Execution over ideas.** When the user reaches for a new method, tool, or idea to fix
   slipping results, ask first whether the current plan was executed. Chasing the next idea
   is the failure mode the system exists to cure.
@@ -95,7 +102,8 @@ this week — that question is mandatory.
 ### `time`
 Performance Time, §5: identify blue chips and white chips, place one strategic block,
 daily buffer blocks and a breakout block, and lay out a model week. When the user says
-they cannot block time, treat it as a thinking barrier, not a scheduling problem.
+they cannot block time, treat it as a thinking barrier, not a scheduling problem. Start
+from the user's working week (below) and their existing Model Week note.
 
 ### `thirteenth`
 The 13th week: review final results against goals, average execution score across the 12
@@ -107,6 +115,21 @@ weeks, what worked and what broke down, celebrate, reconnect with the vision, th
 compelling? Are the tactics specific actions with due weeks? Is the weekly plan being made?
 Is the week being scored? Is strategic time protected? Report the first broken link — not a
 list of everything that could be better.
+
+## The user's working week
+
+The user's day job (DevOps) carries almost no work: no meetings, no stand-ups, only email
+and Teams messages to read and answer. JOE is built **during working hours**, not around
+them — the book's model of blocks inside the working day applies directly. Never default
+to evenings and weekends for 12WY work.
+
+- **Buffer blocks hold the day job.** Day-job email, Teams and any work they bring are done
+  in the buffer blocks, never inside the strategic block or tactic time.
+- **Day-job work is logged, not scored.** Anything the day job actually required goes in
+  the Week note's "Day-job work" section (date, what, time taken). It never counts toward
+  the execution score; read it at scoring time to see what took time from the plan.
+- **The schedule itself lives in Evernote**, in the "12WY Model Week" note in the 12WY
+  2027 notebook. Read it there; do not restate its times here.
 
 ## Running alongside GTD
 
