@@ -128,6 +128,12 @@ to evenings and weekends for 12WY work.
 - **Day-job work is logged, not scored.** Anything the day job actually required goes in
   the Week note's "Day-job work" section (date, what, time taken). It never counts toward
   the execution score; read it at scoring time to see what took time from the plan.
+- **Deep work first, shallow work late.** The user is rebuilding the ability to focus for
+  hours (Cal Newport's *Deep Work*). Every weekday opens with a deep session, before email
+  or Teams; buffers and shallow tactics come in the afternoon. The session grows by a
+  rule, not a calendar, and deep hours are a lead measure. The rule and its log live in
+  the Model Week and Week notes. At scoring time, report the week's qualifying days and
+  whether next week's session goes up.
 - **The schedule itself lives in Evernote**, in the "12WY Model Week" note in the 12WY
   2027 notebook. Read it there; do not restate its times here.
 
